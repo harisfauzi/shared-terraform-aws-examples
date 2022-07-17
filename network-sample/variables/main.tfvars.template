@@ -1,1 +1,0 @@
-aws_assume_role_arn_networkaccount = "arn:aws:iam::123456789012:role/TerraformDeploymentRole"

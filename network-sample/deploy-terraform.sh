@@ -152,10 +152,9 @@ launch() {
     # terraform init -reconfigure
     echo "Current dir is $(pwd)"
 
-      # -var-file="../../../variables/main.tfvars" \
     # Run terraform plan
     terraform "${PLAN_ACTION[@]}" -input=false -out=tfplan \
-      -var-file="../../../variables/main-${AWS_DEFAULT_REGION}.tfvars" \
+      -var-file="../../../variables/main.tfvars" \
       -var aws_region="${AWS_DEFAULT_REGION}" \
       -compact-warnings \
       "${ARG_ARRAY[@]}"

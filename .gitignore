@@ -27,8 +27,7 @@ network-sample/tfbuild/*
 tfplan
 network-sample/modules/*
 !network-sample/modules/DO_NOT_DELETE
-*/main.tfvars
-network-sample/variables/main.tfvars
+
 network-sample/environments/networkaccount/iam/terraform.tfstate.d/
 network-sample/environments/networkaccount/vpc/terraform.tfstate.d/
 network-sample/environments/networkaccount/nat/terraform.tfstate.d/
@@ -36,3 +35,5 @@ network-sample/environments/networkaccount/nat/.terraform.lock.hcl
 network-sample/environments/networkaccount/vpc/.terraform.lock.hcl
 network-sample/environments/networkaccount/iam/.terraform.lock.hcl
 network-sample/environments/networkaccount/ec2/.terraform.lock.hcl
+network-sample/environments/networkaccount/ec2/local
+network-sample/environments/networkaccount/nat/local

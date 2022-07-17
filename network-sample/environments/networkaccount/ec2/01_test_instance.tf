@@ -34,7 +34,6 @@ data "aws_security_group" "generic_instance_sg" {
 
 
 module "test_ec2_instance" {
-  # source = "github.com/harisfauzi/shared-terraform-aws.git//modules/aws/vpc/aws_network_acl?ref=develop"
   source = "../../../modules/aws/ec2/aws_instance"
 
   name                        = "terraform-test-ec2-instance"
@@ -42,7 +41,6 @@ module "test_ec2_instance" {
   associate_public_ip_address = false
   iam_instance_profile        = data.aws_iam_instance_profile.generic_profile.name
   instance_type               = "t3a.micro"
-  # key_name                    = "haris@fauzi.org-key"
   source_dest_check           = true
   subnet_id                   = data.aws_subnet.private_b.id
   user_data                   = <<EOT
@@ -61,7 +59,7 @@ EOT
   ]
 
   tags = {
-    Owner       = "Haris"
+    Owner       = "ACME"
     Environment = "dev"
   }
 }

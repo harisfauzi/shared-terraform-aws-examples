@@ -6,7 +6,7 @@ module "security_group_nat_instance" {
   description = "SG for the NAT Instance"
 
   tags = {
-    Owner       = "Haris"
+    Owner       = "ACME"
     Environment = "dev"
   }
 
@@ -60,7 +60,7 @@ module "security_group_generic_instance" {
   description = "SG for Generic EC2 Instance"
 
   tags = {
-    Owner       = "Haris"
+    Owner       = "ACME"
     Environment = "dev"
   }
 

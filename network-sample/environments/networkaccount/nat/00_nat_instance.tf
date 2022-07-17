@@ -84,7 +84,7 @@ EOT
   ]
 
   tags = {
-    Owner       = "Haris"
+    Owner       = "ACME"
     Environment = "dev"
   }
 }
@@ -142,7 +142,7 @@ EOT
   ]
 
   tags = {
-    Owner       = "Haris"
+    Owner       = "ACME"
     Environment = "dev"
   }
 }

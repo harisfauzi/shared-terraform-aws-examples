@@ -43,7 +43,7 @@ module "iam_role_nat_instance" {
   ]
 
   tags = {
-    Owner       = "Haris"
+    Owner       = "ACME"
     Environment = "dev"
   }
 }
@@ -113,7 +113,7 @@ module "iam_role_flowlog" {
   ]
 
   tags = {
-    Owner       = "Haris"
+    Owner       = "ACME"
     Environment = "dev"
   }
 }
@@ -185,7 +185,7 @@ module "iam_role_generic_instance" {
   ]
 
   tags = {
-    Owner       = "Haris"
+    Owner       = "ACME"
     Environment = "dev"
   }
 }

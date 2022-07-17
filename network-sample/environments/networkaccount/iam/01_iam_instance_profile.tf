@@ -5,7 +5,7 @@ module "iam_instance_profile_nat_instance" {
   role = module.iam_role_nat_instance.id
 
   tags = {
-    Owner       = "Haris"
+    Owner       = "ACME"
     Environment = "dev"
   }
 }
@@ -17,7 +17,7 @@ module "iam_instance_profile_generic_instance" {
   role = module.iam_role_generic_instance.id
 
   tags = {
-    Owner       = "Haris"
+    Owner       = "ACME"
     Environment = "dev"
   }
 }

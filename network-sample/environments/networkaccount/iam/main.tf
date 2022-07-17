@@ -2,7 +2,7 @@ provider "aws" {
   region = local.region
   assume_role {
     # This is networkaccount
-    role_arn     = "arn:aws:iam::897322816589:role/FAODeployerRole"
+    role_arn     = var.aws_assume_role_arn_networkaccount
     session_name = "terraform"
   }
 }

@@ -1,14 +1,13 @@
 
 module "internet_gateway" {
 
-  # source = "github.com/harisfauzi/shared-terraform-aws.git//modules/aws/vpc/aws_internet_gateway?ref=develop"
   source = "../../../modules/aws/vpc/aws_internet_gateway"
 
   name   = "terraform-mainvpc"
   vpc_id = module.vpc.id
 
   tags = {
-    Owner       = "Haris"
+    Owner       = "ACME"
     Environment = "dev"
   }
 
@@ -26,7 +25,7 @@ module "egress_only_internet_gateway" {
   vpc_id = module.vpc.id
 
   tags = {
-    Owner       = "Haris"
+    Owner       = "ACME"
     Environment = "dev"
   }
 

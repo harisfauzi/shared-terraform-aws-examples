@@ -1,5 +1,4 @@
 module "subnet_public_a" {
-  # source = "github.com/harisfauzi/shared-terraform-aws.git//modules/aws/vpc/aws_network_acl?ref=develop"
   source = "../../../modules/aws/vpc/aws_subnet"
 
   name              = "terraform-public-subnet-a"
@@ -11,7 +10,7 @@ module "subnet_public_a" {
   route_table_id    = module.route_table_public.id
 
   tags = {
-    Owner       = "Haris"
+    Owner       = "ACME"
     Environment = "dev"
   }
 
@@ -22,7 +21,6 @@ module "subnet_public_a" {
 }
 
 module "subnet_public_b" {
-  # source = "github.com/harisfauzi/shared-terraform-aws.git//modules/aws/vpc/aws_network_acl?ref=develop"
   source = "../../../modules/aws/vpc/aws_subnet"
 
   name              = "terraform-public-subnet-b"
@@ -34,7 +32,7 @@ module "subnet_public_b" {
   route_table_id    = module.route_table_public.id
 
   tags = {
-    Owner       = "Haris"
+    Owner       = "ACME"
     Environment = "dev"
   }
 
@@ -56,7 +54,7 @@ module "subnet_private_a" {
   route_table_id    = module.route_table_private_a.id
 
   tags = {
-    Owner       = "Haris"
+    Owner       = "ACME"
     Environment = "dev"
   }
 
@@ -78,7 +76,7 @@ module "subnet_private_b" {
   route_table_id    = module.route_table_private_b.id
 
   tags = {
-    Owner       = "Haris"
+    Owner       = "ACME"
     Environment = "dev"
   }
 
@@ -100,7 +98,7 @@ module "subnet_isolated_a" {
   route_table_id    = module.route_table_isolated_a.id
 
   tags = {
-    Owner       = "Haris"
+    Owner       = "ACME"
     Environment = "dev"
   }
 
@@ -122,7 +120,7 @@ module "subnet_isolated_b" {
   route_table_id    = module.route_table_isolated_b.id
 
   tags = {
-    Owner       = "Haris"
+    Owner       = "ACME"
     Environment = "dev"
   }
 
@@ -144,7 +142,7 @@ module "subnet_privatelink_a" {
   route_table_id    = module.route_table_privatelink_a.id
 
   tags = {
-    Owner       = "Haris"
+    Owner       = "ACME"
     Environment = "dev"
   }
 
@@ -166,7 +164,7 @@ module "subnet_privatelink_b" {
   route_table_id    = module.route_table_privatelink_b.id
 
   tags = {
-    Owner       = "Haris"
+    Owner       = "ACME"
     Environment = "dev"
   }
 

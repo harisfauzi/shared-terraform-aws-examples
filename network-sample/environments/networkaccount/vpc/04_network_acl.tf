@@ -1,12 +1,11 @@
 module "network_acl_public" {
-  # source = "github.com/harisfauzi/shared-terraform-aws.git//modules/aws/vpc/aws_network_acl?ref=develop"
   source = "../../../modules/aws/vpc/aws_network_acl"
 
   name   = "terraform-public-nacl"
   vpc_id = module.vpc.id
 
   tags = {
-    Owner       = "Haris"
+    Owner       = "ACME"
     Environment = "dev"
   }
 
@@ -22,7 +21,7 @@ module "network_acl_private" {
   vpc_id = module.vpc.id
 
   tags = {
-    Owner       = "Haris"
+    Owner       = "ACME"
     Environment = "dev"
   }
 
@@ -38,7 +37,7 @@ module "network_acl_isolated" {
   vpc_id = module.vpc.id
 
   tags = {
-    Owner       = "Haris"
+    Owner       = "ACME"
     Environment = "dev"
   }
 
@@ -54,7 +53,7 @@ module "network_acl_privatelink" {
   vpc_id = module.vpc.id
 
   tags = {
-    Owner       = "Haris"
+    Owner       = "ACME"
     Environment = "dev"
   }
 

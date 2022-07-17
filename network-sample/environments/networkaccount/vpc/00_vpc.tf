@@ -4,7 +4,6 @@
 ################################################################################
 
 module "vpc" {
-  # source = "github.com/harisfauzi/shared-terraform-aws.git//modules/aws/vpc/aws_vpc?ref=develop"
   source = "../../../modules/aws/vpc/aws_vpc"
 
   name        = "terraform-mainvpc"
@@ -12,7 +11,7 @@ module "vpc" {
   enable_ipv6 = true
 
   tags = {
-    Owner       = "Haris"
+    Owner       = "ACME"
     Environment = "dev"
   }
 }

@@ -12,7 +12,6 @@ get_short_term_credentials() {
     AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY
     AWS_SESSION_TOKEN=$AWS_SECURITY_TOKEN
     export AWS_ACCESS_KEY AWS_SECRET_KEY AWS_SECURITY_TOKEN AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN
-    # write_credentials "terraform/tffiles/deployercredentials" "faodeployer" "${AWS_ACCESS_KEY}" "${AWS_SECRET_KEY}" "${AWS_SECURITY_TOKEN}"
 }
 
 get_long_term_credentials() {
@@ -21,7 +20,6 @@ get_long_term_credentials() {
     AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY
     AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY
     export AWS_ACCESS_KEY AWS_SECRET_KEY AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY
-    # write_credentials "terraform/tffiles/deployercredentials" "faodeployer" "${AWS_ACCESS_KEY}" "${AWS_SECRET_KEY}" "${AWS_SECURITY_TOKEN}"
 }
 
 write_credentials()
@@ -61,8 +59,6 @@ assume_backend_role() {
     TF_VAR_backend_secret_key=$(echo ${ASSUMED_CREDENTIALS} | jq -r '.Credentials.SecretAccessKey')
     TF_VAR_backend_token=$(echo ${ASSUMED_CREDENTIALS} | jq -r '.Credentials.SessionToken')
     export TF_VAR_backend_access_key TF_VAR_backend_secret_key TF_VAR_backend_token
-
-    # write_credentials "terraform/tffiles/backendcredentials" "faobackend" "${TF_VAR_backend_access_key}" "${TF_VAR_backend_secret_key}" "${TF_VAR_backend_token}"
 }
 
 assume_role() {
@@ -97,14 +93,11 @@ assume_role() {
     AWS_SESSION_TOKEN=$AWS_SECURITY_TOKEN
     export AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN
     echo "Assumed AWS_ACCESS_KEY is $AWS_ACCESS_KEY"
-
-    # write_credentials "terraform/tffiles/deployercredentials" "faodeployer" "${AWS_ACCESS_KEY}" "${AWS_SECRET_KEY}" "${AWS_SECURITY_TOKEN}"
 }
 
 launch() {
     local SCRIPT_ACTION=$1
     local TF_CONFIG=$2
-    local DOCKER_IMAGE=hashicorp/terraform
     local SOURCE_REPO_FULL_URL=$(git remote get-url origin | cut -d':' -f2)
     local SOURCE_REPO_URL
     local workspace_name=""
@@ -117,7 +110,7 @@ launch() {
     fi
     local SOURCE_REPO_BRANCH=$(git branch| grep -e '^*' | awk '{print $2}')
 
-    cd "terraform/environments/${TF_CONFIG}"
+    cd "environments/${TF_CONFIG}"
     if [ "z${SCRIPT_ACTION}" == "zdeploy" ]; then
         ACTION=("apply" "tfplan")
         PLAN_ACTION=("plan")
@@ -153,13 +146,15 @@ launch() {
 
     # Run terraform init
     echo "Run terraform init"
-    terraform init -backend-config="../../../backend.tf" -migrate-state
+    terraform init
+    # terraform init -backend-config="../../../backend.tf" -migrate-state
     # terraform init -migrate-state
     # terraform init -reconfigure
+    echo "Current dir is $(pwd)"
 
+      # -var-file="../../../variables/main.tfvars" \
     # Run terraform plan
     terraform "${PLAN_ACTION[@]}" -input=false -out=tfplan \
-      -var-file="../../../variables/main.tfvars" \
       -var-file="../../../variables/main-${AWS_DEFAULT_REGION}.tfvars" \
       -var aws_region="${AWS_DEFAULT_REGION}" \
       -compact-warnings \
@@ -249,7 +244,7 @@ get_shared_modules() {
   GIT_URL="https://${GIT_CREDENTIALS}@github.com/harisfauzi/shared-terraform-aws.git"
   git clone -b "${GIT_BRANCH}" --depth 1 "${GIT_URL}" shared-terraform-aws
   local CURRENT_DIR=$(pwd)
-  (cd "${CURRENT_DIR}/shared-terraform-aws/modules"; tar cf - .) | (cd "${CURRENT_DIR}/terraform/modules"; tar xf -)
+  (cd "${CURRENT_DIR}/shared-terraform-aws/modules"; tar cf - .) | (cd "${CURRENT_DIR}/modules"; tar xf -)
   rm -rf shared-terraform-aws
 }
 

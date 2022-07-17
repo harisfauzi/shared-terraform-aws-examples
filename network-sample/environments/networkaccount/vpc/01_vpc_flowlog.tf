@@ -14,7 +14,7 @@ module "aws_flow_log_mainvpc" {
   max_aggregation_interval = 60
 
   tags = {
-    Owner       = "Haris"
+    Owner       = "ACME"
     Environment = "dev"
   }
 }

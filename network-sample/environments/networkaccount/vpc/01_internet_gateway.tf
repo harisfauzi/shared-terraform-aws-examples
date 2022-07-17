@@ -8,7 +8,7 @@ module "internet_gateway" {
 
   tags = {
     Owner       = "ACME"
-    Environment = "dev"
+    Environment = "network"
   }
 
   depends_on = [
@@ -26,7 +26,7 @@ module "egress_only_internet_gateway" {
 
   tags = {
     Owner       = "ACME"
-    Environment = "dev"
+    Environment = "network"
   }
 
   depends_on = [

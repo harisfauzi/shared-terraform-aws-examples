@@ -6,7 +6,7 @@ module "iam_instance_profile_nat_instance" {
 
   tags = {
     Owner       = "ACME"
-    Environment = "dev"
+    Environment = "network"
   }
 }
 
@@ -18,6 +18,6 @@ module "iam_instance_profile_generic_instance" {
 
   tags = {
     Owner       = "ACME"
-    Environment = "dev"
+    Environment = "network"
   }
 }

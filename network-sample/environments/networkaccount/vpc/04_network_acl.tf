@@ -6,7 +6,7 @@ module "network_acl_public" {
 
   tags = {
     Owner       = "ACME"
-    Environment = "dev"
+    Environment = "network"
   }
 
   depends_on = [
@@ -22,7 +22,7 @@ module "network_acl_private" {
 
   tags = {
     Owner       = "ACME"
-    Environment = "dev"
+    Environment = "network"
   }
 
   depends_on = [
@@ -38,7 +38,7 @@ module "network_acl_isolated" {
 
   tags = {
     Owner       = "ACME"
-    Environment = "dev"
+    Environment = "network"
   }
 
   depends_on = [
@@ -54,7 +54,7 @@ module "network_acl_privatelink" {
 
   tags = {
     Owner       = "ACME"
-    Environment = "dev"
+    Environment = "network"
   }
 
   depends_on = [

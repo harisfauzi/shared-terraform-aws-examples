@@ -85,7 +85,7 @@ EOT
 
   tags = {
     Owner       = "ACME"
-    Environment = "dev"
+    Environment = "network"
   }
 }
 
@@ -143,6 +143,6 @@ EOT
 
   tags = {
     Owner       = "ACME"
-    Environment = "dev"
+    Environment = "network"
   }
 }

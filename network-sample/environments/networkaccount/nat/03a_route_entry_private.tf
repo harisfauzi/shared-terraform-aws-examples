@@ -27,7 +27,6 @@ module "route_entry_private_a_ipv4_default" {
   route_table_id         = data.aws_route_table.route_table_private_a.id
   destination_cidr_block = "0.0.0.0/0"
   instance_id            = module.nat_ec2_instance_a.id
-  # network_interface_id = module.nat_ec2_instance_a.primary_network_interface_id
 }
 
 module "route_entry_private_b_ipv4_default" {
@@ -36,7 +35,6 @@ module "route_entry_private_b_ipv4_default" {
   route_table_id         = data.aws_route_table.route_table_private_b.id
   destination_cidr_block = "0.0.0.0/0"
   instance_id            = module.nat_ec2_instance_b.id
-  # network_interface_id = module.nat_ec2_instance_b.primary_network_interface_id
 }
 
 module "route_entry_private_a_ipv6_default" {

@@ -6,6 +6,6 @@ module "aws_cloudwatch_log_group_vpc" {
 
   tags = {
     Owner       = "ACME"
-    Environment = "dev"
+    Environment = "network"
   }
 }

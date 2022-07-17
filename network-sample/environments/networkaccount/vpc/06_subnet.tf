@@ -11,7 +11,7 @@ module "subnet_public_a" {
 
   tags = {
     Owner       = "ACME"
-    Environment = "dev"
+    Environment = "network"
   }
 
   depends_on = [
@@ -33,7 +33,7 @@ module "subnet_public_b" {
 
   tags = {
     Owner       = "ACME"
-    Environment = "dev"
+    Environment = "network"
   }
 
   depends_on = [
@@ -55,7 +55,7 @@ module "subnet_private_a" {
 
   tags = {
     Owner       = "ACME"
-    Environment = "dev"
+    Environment = "network"
   }
 
   depends_on = [
@@ -77,7 +77,7 @@ module "subnet_private_b" {
 
   tags = {
     Owner       = "ACME"
-    Environment = "dev"
+    Environment = "network"
   }
 
   depends_on = [
@@ -99,7 +99,7 @@ module "subnet_isolated_a" {
 
   tags = {
     Owner       = "ACME"
-    Environment = "dev"
+    Environment = "network"
   }
 
   depends_on = [
@@ -121,7 +121,7 @@ module "subnet_isolated_b" {
 
   tags = {
     Owner       = "ACME"
-    Environment = "dev"
+    Environment = "network"
   }
 
   depends_on = [
@@ -143,7 +143,7 @@ module "subnet_privatelink_a" {
 
   tags = {
     Owner       = "ACME"
-    Environment = "dev"
+    Environment = "network"
   }
 
   depends_on = [
@@ -165,7 +165,7 @@ module "subnet_privatelink_b" {
 
   tags = {
     Owner       = "ACME"
-    Environment = "dev"
+    Environment = "network"
   }
 
   depends_on = [

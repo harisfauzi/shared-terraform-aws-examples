@@ -44,7 +44,7 @@ module "iam_role_nat_instance" {
 
   tags = {
     Owner       = "ACME"
-    Environment = "dev"
+    Environment = "network"
   }
 }
 
@@ -114,7 +114,7 @@ module "iam_role_flowlog" {
 
   tags = {
     Owner       = "ACME"
-    Environment = "dev"
+    Environment = "network"
   }
 }
 
@@ -186,7 +186,7 @@ module "iam_role_generic_instance" {
 
   tags = {
     Owner       = "ACME"
-    Environment = "dev"
+    Environment = "network"
   }
 }
 

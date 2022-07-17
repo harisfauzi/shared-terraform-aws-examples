@@ -6,7 +6,7 @@ module "route_table_public" {
 
   tags = {
     Owner       = "ACME"
-    Environment = "dev"
+    Environment = "network"
   }
 
   depends_on = [
@@ -22,7 +22,7 @@ module "route_table_private_a" {
 
   tags = {
     Owner       = "ACME"
-    Environment = "dev"
+    Environment = "network"
   }
 
   depends_on = [
@@ -38,7 +38,7 @@ module "route_table_private_b" {
 
   tags = {
     Owner       = "ACME"
-    Environment = "dev"
+    Environment = "network"
   }
 
   depends_on = [
@@ -54,7 +54,7 @@ module "route_table_isolated_a" {
 
   tags = {
     Owner       = "ACME"
-    Environment = "dev"
+    Environment = "network"
   }
 
   depends_on = [
@@ -70,7 +70,7 @@ module "route_table_isolated_b" {
 
   tags = {
     Owner       = "ACME"
-    Environment = "dev"
+    Environment = "network"
   }
 
   depends_on = [
@@ -86,7 +86,7 @@ module "route_table_privatelink_a" {
 
   tags = {
     Owner       = "ACME"
-    Environment = "dev"
+    Environment = "network"
   }
 
   depends_on = [
@@ -102,7 +102,7 @@ module "route_table_privatelink_b" {
 
   tags = {
     Owner       = "ACME"
-    Environment = "dev"
+    Environment = "network"
   }
 
   depends_on = [

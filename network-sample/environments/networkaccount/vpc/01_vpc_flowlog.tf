@@ -15,6 +15,6 @@ module "aws_flow_log_mainvpc" {
 
   tags = {
     Owner       = "ACME"
-    Environment = "dev"
+    Environment = "network"
   }
 }

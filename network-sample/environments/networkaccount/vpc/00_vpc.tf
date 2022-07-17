@@ -12,6 +12,6 @@ module "vpc" {
 
   tags = {
     Owner       = "ACME"
-    Environment = "dev"
+    Environment = "network"
   }
 }

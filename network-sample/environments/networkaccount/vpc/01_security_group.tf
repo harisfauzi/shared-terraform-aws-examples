@@ -7,7 +7,7 @@ module "security_group_nat_instance" {
 
   tags = {
     Owner       = "ACME"
-    Environment = "dev"
+    Environment = "network"
   }
 
   egresses = [
@@ -61,7 +61,7 @@ module "security_group_generic_instance" {
 
   tags = {
     Owner       = "ACME"
-    Environment = "dev"
+    Environment = "network"
   }
 
   egresses = [

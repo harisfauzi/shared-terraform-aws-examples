@@ -108,7 +108,7 @@ instance is masquareded by the NAT instance using Linux IP NAT translation.
 
 Change the `--action` flag to `destroy` and do it in reverse order:
 
-  1. Destroy the EC2 instance:
+ 1. Destroy the EC2 instance:
 
     ```bash
     ./deploy-terraform.sh \
@@ -118,32 +118,32 @@ Change the `--action` flag to `destroy` and do it in reverse order:
       --dry-run false
     ```
 
-  2. Destroy the NAT instances:
+ 2. Destroy the NAT instances:
 
     ```bash
     ./deploy-terraform.sh \
       --account ${AWS_ACCOUNT} \
-      --action deploy \
+      --action destroy \
       --item ${AWS_ACCOUNT}/nat \
       --dry-run false
     ```
 
-  3. Destroy the VPC resources:
+ 3. Destroy the VPC resources:
 
     ```bash
     ./deploy-terraform.sh \
       --account ${AWS_ACCOUNT} \
-      --action deploy \
+      --action destroy \
       --item ${AWS_ACCOUNT}/vpc \
       --dry-run false
     ```
 
-  4. Destroy the IAM resources:
+ 4. Destroy the IAM resources:
 
     ```bash
     ./deploy-terraform.sh \
       --account ${AWS_ACCOUNT} \
-      --action deploy \
+      --action destroy \
       --item ${AWS_ACCOUNT}/iam \
       --dry-run false
     ```

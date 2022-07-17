@@ -37,3 +37,4 @@ network-sample/environments/networkaccount/iam/.terraform.lock.hcl
 network-sample/environments/networkaccount/ec2/.terraform.lock.hcl
 network-sample/environments/networkaccount/ec2/local
 network-sample/environments/networkaccount/nat/local
+network-sample/environments/networkaccount/ec2/terraform.tfstate.d/

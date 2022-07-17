@@ -150,7 +150,6 @@ launch() {
     # terraform init -backend-config="../../../backend.tf" -migrate-state
     # terraform init -migrate-state
     # terraform init -reconfigure
-    echo "Current dir is $(pwd)"
 
     # Run terraform plan
     terraform "${PLAN_ACTION[@]}" -input=false -out=tfplan \
